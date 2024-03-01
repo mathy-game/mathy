@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dilg4ecjpo3xk"]
+[gd_scene load_steps=3 format=3 uid="uid://dilg4ecjpo3xk"]
 
-[ext_resource type="Texture2D" uid="uid://b5x5db4i6fo3a" path="res://icon.svg" id="1_rgeql"]
+[ext_resource type="Script" path="res://src/system.gd" id="1_jj081"]
+[ext_resource type="Script" path="res://src/role.gd" id="2_e3eme"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(95, 169)
-texture = ExtResource("1_rgeql")
+[node name="System" type="Sprite2D" parent="."]
+script = ExtResource("1_jj081")
+
+[node name="Role" type="Sprite2D" parent="System"]
+script = ExtResource("2_e3eme")
+
+[node name="Camera2D" type="Camera2D" parent="System/Role"]
