@@ -1,14 +1,13 @@
 extends Sprite2D
 
-var x = 0.0
-var speed = 50
-var s = 50.0 # Interval
+var config = load("res://src/config.gd")
 var elapsed = 0
 var data = load("res://scores/test/data.gd")
+var x = 0.0
 
 func _process(delta):
-	x += speed * delta
-	var y = data.get_function(x / s).call(x / s) * s
+	x += config.speed * delta
+	var y = data.get_function(x / config.s).call(x / config.s) * config.s
 	position.x = x
 	position.y = y
 	elapsed += 1
