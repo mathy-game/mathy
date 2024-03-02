@@ -1,0 +1,18 @@
+<svg width="56" height="56">
+  <circle
+    fill="yellow"
+    stroke="white"
+    stroke-width="2"
+    cx="28"
+    cy="28"
+    r="25"
+  >
+  </circle>
+  <!-- <circle
+    fill="yellow"
+    cx="25"
+    cy="25"
+    r="5"
+  >
+  </circle> -->
+</svg>

@@ -12,5 +12,10 @@ func _process(delta):
 	position.y = y
 	elapsed += 1
 
-func _draw():
-	draw_circle(Vector2(0, 0), 30, "yellow")
+func _input(event):
+	if event is InputEventKey:
+		for i in range(x - 20, x + 20):
+			var tap = data.get_tap(i / config.s)
+			if tap != null:
+				print("Get!")
+			print(tap)
