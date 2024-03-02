@@ -16,5 +16,8 @@ func _draw():
 	draw_line(Vector2(0, -10000), Vector2(0, 10000), "white", 3)
 	for x in range(0,10000):
 		var tap = data.get_tap(x)
-		if tap != null:
+		if tap == 1:
 			draw_circle(Vector2(x, data.get_function(x / config.s).call(x / config.s) * config.s), 10, "skyblue")
+		if tap == 2:
+			draw_circle(Vector2(x, data.get_function(x / config.s).call(x / config.s) * config.s), 10, "yellow")
+			
