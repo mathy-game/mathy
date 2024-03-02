@@ -13,7 +13,7 @@ func _ready():
 			var t = Sprite2D.new()
 			t.position.x = x
 			t.position.y = data.get_function(x / config.s).call(x / config.s) * config.s
-			t.texture = load("res://static/role.svg")
+			t.texture = load("res://static/tap.svg")
 			add_child(t)
 		if tap == 2:
 			draw_circle(Vector2(x, data.get_function(x / config.s).call(x / config.s) * config.s), 10, "yellow")
