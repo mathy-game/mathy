@@ -29,7 +29,13 @@ export class Functions extends Graphics {
             x <= this.domain[1];
             x += 1 / 250
           ) {
-            const value = test.fns[0].fn(x)
+            const value = ((x: number) => {
+              for (const fn of test.fns) {
+                if (x >= fn.start && x <= fn.start + fn.duration) {
+                  return fn.fn(x)
+                }
+              }
+            })(x)
             this.lineTo(x, value)
           }
         this.stroke()
@@ -40,7 +46,13 @@ export class Functions extends Graphics {
             x <= this.domain[1] + 3;
             x += 1 / 250
           ) {
-            const value = test.fns[0].fn(x)
+            const value = ((x: number) => {
+              for (const fn of test.fns) {
+                if (x >= fn.start && x <= fn.start + fn.duration) {
+                  return fn.fn(x)
+                }
+              }
+            })(x)
             this.lineTo(x, value)
           }
         this.stroke()

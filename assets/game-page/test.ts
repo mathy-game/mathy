@@ -7,7 +7,13 @@ export const test = defineGame({
   fns: [
       {
           fn: Math.sin,
-          duration: 100
+          duration: 10,
+          start: 0
+      },
+      {
+        fn: Math.cos,
+        duration: 10,
+        start: 10
       }
   ],
   notes: [
@@ -25,6 +31,21 @@ export const test = defineGame({
       type: 'tap',
       x: 6.2,
       isOff: false,
-    }
+    },
+    {
+      type: 'catch',
+      x: 7,
+      isOff: false
+    },
+    {
+      type: 'catch',
+      x: 7.2,
+      isOff: false
+    },
+    {
+      type: 'catch',
+      x: 7.4,
+      isOff: false
+    },
   ]
 })

@@ -1,6 +1,7 @@
 export interface FunctionUnit {
   fn: (x: number) => number
   duration: number
+  start: number
 }
 
 export interface Note {

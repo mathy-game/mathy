@@ -12,7 +12,11 @@ class cood extends Graphics {
         this.draw()
         this.node.removeAllChildren()
         this.notesInstances = test.notes.map((note, index) => {
-            const instance = instantiate(this.node.parent.getChildByName('Sample')).getComponent(Sprite)
+            const instance = instantiate(
+                note.type === 'tap' ? this.node.parent.getChildByName('Sample') :
+                    note.type === 'catch' ? this.node.parent.getChildByName('SampleCatch') :
+                        null
+            ).getComponent(Sprite)
             instance.node.setPosition(note.x * 250, test.fns[0].fn(note.x) * 250)
             this.node.addChild(instance.node)
             return instance
