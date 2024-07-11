@@ -3,11 +3,19 @@ export interface FunctionUnit {
   duration: number
 }
 
+export interface Note {
+  type: 'tap' | 'hold' | 'catch'
+  isOff: boolean
+  duration?: number
+  x: number
+}
+
 export interface GameData {
-  name: string,
-  level: number,
-  author: string,
+  name: string
+  level: number
+  author: string
   fns: FunctionUnit[]
+  notes: Note[]
 }
 
 export function defineGame(data: GameData) {

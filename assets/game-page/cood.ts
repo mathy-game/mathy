@@ -1,15 +1,22 @@
-import { _decorator, Component, Graphics, Node, Color } from 'cc';
-const { ccclass, property } = _decorator;
-import { game } from '../global';
-import { defineGame } from '../reader/interface';
+import { _decorator, Component, Graphics, Node, Color, Sprite, SpriteFrame, resources, sp, instantiate, Prefab } from 'cc'
+import { test } from './test'
+const { ccclass, property } = _decorator
 
 @ccclass('cood')
 class cood extends Graphics {
     timeCount: number = 0
     domain: [number, number] = [0, 0]
+    notesInstances: Sprite[] = []
 
     start() {
         this.draw()
+        this.node.removeAllChildren()
+        this.notesInstances = test.notes.map((note, index) => {
+            const instance = instantiate(this.node.parent.getChildByName('Sample')).getComponent(Sprite)
+            instance.node.setPosition(note.x * 250, test.fns[0].fn(note.x) * 250)
+            this.node.addChild(instance.node)
+            return instance
+        })
     }
 
     update(deltaTime: number) {
@@ -29,7 +36,6 @@ class cood extends Graphics {
         }
         this.moveTo(0, 0)
         this.stroke()
-
     }
 }
 

@@ -1,18 +1,6 @@
-import { _decorator, Color, Component, Graphics, Node } from 'cc';
-import { defineGame } from '../reader/interface';
-const { ccclass, property } = _decorator;
-
-const test = defineGame({
-    name: 'Test',
-    level: 114514,
-    author: 'Me',
-    fns: [
-        {
-            fn: Math.sin,
-            duration: 100
-        }
-    ]
-})
+import { _decorator, Color, Component, Graphics, Node } from 'cc'
+import { test } from './test'
+const { ccclass, property } = _decorator
 
 @ccclass('Functions')
 export class Functions extends Graphics {
